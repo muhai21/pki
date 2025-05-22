@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document>
+    <Header>
+        <SenderID>SEG-Sender</SenderID>
+        <ReceiverID>SEG-Receiver</ReceiverID>
+        <DocumentType>Test</DocumentType>
+        <DocumentID>12345</DocumentID>
+    </Header>
+    <Body>
+        <Message>This is a test message using Secure Electronic Gateway</Message>
+        <Data>Sample data payload for testing</Data>
+    </Body>
+</Document>
