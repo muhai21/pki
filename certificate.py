@@ -25,9 +25,9 @@ def generate_private_key(filename: str):
 def generate_ca_cert(private_key, filename: str):
     """Generate a self-signed Root CA certificate."""
     subject = issuer = x509.Name([
-        x509.NameAttribute(NameOID.COUNTRY_NAME, "US"),
-        x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, "California"),
-        x509.NameAttribute(NameOID.LOCALITY_NAME, "San Francisco"),
+        x509.NameAttribute(NameOID.COUNTRY_NAME, "BD"),
+        x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, "Dhaka"),
+        x509.NameAttribute(NameOID.LOCALITY_NAME, "Savar"),
         x509.NameAttribute(NameOID.ORGANIZATION_NAME, "SEG Root CA"),
         x509.NameAttribute(NameOID.COMMON_NAME, "SEG Root CA"),
     ])
@@ -54,9 +54,9 @@ def generate_ca_cert(private_key, filename: str):
 def generate_server_cert(private_key, ca_key, ca_cert, filename: str, common_name: str):
     """Generate a server certificate signed by the Root CA."""
     subject = x509.Name([
-        x509.NameAttribute(NameOID.COUNTRY_NAME, "US"),
-        x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, "California"),
-        x509.NameAttribute(NameOID.LOCALITY_NAME, "San Francisco"),
+        x509.NameAttribute(NameOID.COUNTRY_NAME, "BD"),
+        x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, "Dhaka"),
+        x509.NameAttribute(NameOID.LOCALITY_NAME, "Savar"),
         x509.NameAttribute(NameOID.ORGANIZATION_NAME, "SEG Server"),
         x509.NameAttribute(NameOID.COMMON_NAME, common_name),
     ])
