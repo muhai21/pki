@@ -1,51 +1,26 @@
-🛡️PKI: Public Key Infrastructure Implementation
+# 🛡️ PKI: Public Key Infrastructure Implementation
 
-Overview
+## 📖 Overview
 
-The PKI project provides a foundational implementation of Public Key Infrastructure using Python. It facilitates secure document exchange through the generation and validation of X.509 certificates, leveraging asymmetric encryption techniques.
+The **PKI** project offers a foundational implementation of Public Key Infrastructure using Python. It enables secure document exchange through the generation and validation of X.509 certificates, leveraging asymmetric encryption techniques.
 
-🚀 Features
+## 🚀 Features
 
+- **Root and Leaf Certificate Authorities (CAs):** Establishes a hierarchical trust model with a Root CA and subordinate Leaf CAs. 🔒
+- **Digital Signature Generation:** Securely signs documents to ensure authenticity and integrity. ✍️
+- **Document Encryption:** Encrypts documents for confidential transmission. 🔐
+- **Certificate Validation:** Verifies the authenticity and validity of certificates. ✅
+- **Revocation Mechanism:** Manages and checks certificate revocation status. 🚫
 
+## 🛠️ Technologies Used
 
+- **Programming Language:** Python 🐍
+- **Cryptographic Library:** OpenSSL 🔑
+- **Certificate Format:** X.509 📜
 
+## 📁 Project Structure
 
-Root and Leaf Certificate Authorities (CAs): Establish a hierarchical trust model with a Root CA and subordinate Leaf CAs.
-
-
-
-Digital Signature Generation: Securely sign documents to ensure authenticity and integrity.
-
-
-
-Document Encryption: Encrypt documents for confidential transmission.
-
-
-
-Certificate Validation: Verify the authenticity and validity of certificates.
-
-
-
-Revocation Mechanism: Manage and check certificate revocation status.
-
-🔧 Technologies Used
-
-
-
-
-
-Programming Language: Python
-
-
-
-Cryptographic Library: OpenSSL
-
-
-
-Certificate Format: X.509
-
-📁 Project Structure
-
+```plaintext
 ├── rootCA.crt          # Root Certificate Authority Certificate
 ├── rootCA.key          # Root Certificate Authority Private Key
 ├── leafCA.crt          # Leaf Certificate Authority Certificate
@@ -54,95 +29,80 @@ Certificate Format: X.509
 ├── receiver.py         # Receiver's script to decrypt and verify documents
 ├── certificate.py      # Module to handle certificate operations
 └── document.xml        # Sample XML document for encryption
+```
 
-📥 Installation
+## 📥 Installation
 
-Prerequisites
+### Prerequisites
 
+- Python 3.6 or higher 🐍
+- OpenSSL installed on your system 🔧
 
+### Setup
 
+1. Clone the repository:
 
+   ```bash
+   git clone https://github.com/muhai21/pki.git
+   cd pki
+   ```
 
-Python 3.6+
+2. (Optional) Create and activate a virtual environment:
 
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
 
+## Install required dependencies:
 
-OpenSSL installed on your system
+  ```bash
+  pip install -r requirements.txt
+  ```
 
-Setup
+## ⚙️ Usage
 
+### Generating Certificates
 
+- Create Root CA:
 
+  ```bash
+  Copy
+  python certificate.py --create-root-ca
+  ```
 
+- Create Leaf CA:
 
-Clone the repository:
+  ```bash
+  Copy
+  python certificate.py --create-leaf-ca
+  ```
 
-git clone https://github.com/muhai21/pki.git
-cd pki
+### Signing and Encrypting Documents
 
+- Sender:
 
+  ```bash
+  Copy
+  python sender.py --encrypt --sign --input document.xml --output encrypted_document.xml
+  ```
 
-(Optional) Create and activate a virtual environment:
+- Receiver:
 
-python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+  ```bash
+  Copy
+  python receiver.py --decrypt --verify --input encrypted_document.xml --output decrypted_document.xml
+  ```
 
+## 📄 License
 
+This project is licensed under the MIT License. See the LICENSE file for details. ⚖️
 
-Install required dependencies:
+## 🤝 Contributing
 
-pip install -r requirements.txt
+Contributions are welcome! Please see the CONTRIBUTING.md file for guidelines on how to contribute to this project. 🙌
 
-🛠️ Usage
+## 📚 References
 
-Generating Certificates
-
-
-
-
-
-Create Root CA:
-
-python certificate.py --create-root-ca
-
-
-
-Create Leaf CA:
-
-python certificate.py --create-leaf-ca
-
-Signing and Encrypting Documents
-
-
-
-
-
-Sender:
-
-python sender.py --encrypt --sign --input document.xml --output encrypted_document.xml
-
-
-
-Receiver:
-
-python receiver.py --decrypt --verify --input encrypted_document.xml --output decrypted_document.xml
-
-📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-🤝 Contributing
-
-Contributions are welcome! Please refer to the CONTRIBUTING.md for guidelines on how to contribute to this project.
-
-📚 References
-
-
-
-
-
-Public Key Infrastructure (PKI) - Wikipedia
-
-
-
-X.509 Certificate Standard
+- [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure) 📖
+- [X.509 Certificate Standard](https://en.wikipedia.org/wiki/X.509) 📜
