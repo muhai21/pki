@@ -9,5 +9,5 @@
     <Body>
         <Message>This is a test message using Secure Electronic Gateway</Message>
         <Data>Sample data payload for testing</Data>
-    </Body>
+    </Body> 
 </Document>
